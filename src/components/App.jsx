@@ -32,9 +32,8 @@ export class App extends React.Component {
     }
   }
 
-  async fetchImages(query, page) {
-    try {
-      await fetchImages(query, page).then(result => {
+   fetchImages(query, page) {
+       fetchImages(query, page).then(result => {
         const ImageArray = result.data.hits;
         if (ImageArray.length === 0) {
           this.setState({ showButton: false })
@@ -46,13 +45,10 @@ export class App extends React.Component {
           }))
           this.setState({ showButton: true });
         }
-}) 
-    } catch (error) {
-      console.log(error)
-    } finally {
-      this.setState({ isLoading: false });
-    }
-  }
+    }) .catch(console.log(Error))
+    .finally(() => this.setState({ isLoading: false }));
+    } 
+
 
   onLoadMoreBtnClick = () => {
   this.setState(prevState => ({
