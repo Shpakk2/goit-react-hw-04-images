@@ -10,7 +10,7 @@ export const ImageGallery = ({ images, showModal }) => {
             {images.map(image => {
                 return (
                     <ImageGalleryItem 
-                    keyID={image.id}
+                    key={image.id}
                     webformatURL={image.webformatURL}
                     tags={image.tags}
                     largeImageURL={image.largeImageURL}

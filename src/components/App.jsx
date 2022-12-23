@@ -45,7 +45,9 @@ export class App extends React.Component {
           }))
           this.setState({ showButton: true });
         }
-    }) .catch(console.log(Error))
+    }).catch(error => {
+    console.log(error);
+  })
     .finally(() => this.setState({ isLoading: false }));
     } 
 
