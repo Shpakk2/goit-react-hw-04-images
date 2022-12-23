@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function fetchImages(searchQuery, page) {
+export async function fetchData(searchQuery, page) {
     const API_KEY = "31407151-553822a8b7d25cc0b7cb87592"
     
     const searchParams = new URLSearchParams({
